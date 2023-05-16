@@ -13,7 +13,6 @@ function App() {
     <Corpo >
       <Header/>
       <Main />
-      <h1>estou no appjs</h1>
     </Corpo>
   );
 }

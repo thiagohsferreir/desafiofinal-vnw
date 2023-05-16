@@ -14,7 +14,8 @@ export default function NavBar() {
                     <li>Filmes</li>
                 </UlMeio>
                 <UlDireita>
-                    <Icon><img src={Lupa} alt="" /></Icon>
+                     <Icon type="search" placeholder='Procurar'/> 
+                    
                     <List>Filtro</List>
                     <List>Login</List>
                 </UlDireita>
