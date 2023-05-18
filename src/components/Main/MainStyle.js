@@ -4,6 +4,7 @@ export const Principal = styled.div`
 color: white;
 padding-top: 3em;
 height: 50vh;
+margin-top: -1em;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -18,5 +19,11 @@ ul{
     display: flex;
     list-style: none;
     justify-content: space-evenly;
+    li{
+    }
+    :hover{
+    color: tomato;
+    cursor: pointer;
 }
+
 `

@@ -2,55 +2,74 @@ import styled from "styled-components"
 import Avatar from "./assets/Avatar.png"
 
 
-export const Corpo = styled.section`
-height: 100vh;
+
+export const Car = styled.div`
 background-image: url(${(props) => props.BackGround || `${Avatar}`});
-background-size: 100%;
+background-size: cover;
+height: 90vh;
+width: 100vw;
 display: flex;
 align-items: end;
-.rec.rec-arrow, .rec.rec-dot, .rec-dot_active{
-    display: none;
-}
+
 `
 export const CarouselContainer = styled.div`
-width: 70%;
+width: 100%;
+overflow:hidden;
+.rec-carousel{
+    background: black;
+width: 110vw;
+
+}
+.rec.rec-arrow, .rec.rec-dot, .rec-dot_active{
+    display: none;
+
+}
 
 `
 export const Info = styled.div`
 color:white;
-background-image: linear-gradient(#00000000, #0000002a, #000000);
+background-image: linear-gradient(to bottom,  #00000000, #0000003a, #000000);
+
 width: 100%;
-gap: .7em;
-padding: 0 5em;
-height: 50%;
+padding: 8em 5em;
+height: 100%;
+display: flex;
+align-items: end;
     h1{
         font-size: 2em;
         width: 45vw;
+        
     }
     h5{
         font-weight: 200;
+        
+        
     }
     div{
         display: flex;
         
         figure{
+            
             img{
                 width: 2em;
             }
         }
         h4{
+            
             font-size: 1.5em;
             padding: 0 0 0 .5em;
 
             span{
+            
                 font-size: .6em;
                 font-weight: 200;
             }
         }
     }
     p{
-        width: 60%;
-        height: 20vh;
+        
+        width: 40%;
+        height: 10vh;
         line-height: 1.5em;
         font-weight: 200;
         overflow: hidden;
@@ -68,6 +87,7 @@ export const Botoes = styled.div`
 padding-top: 1em;
 display: flex;
 gap: 2em;
+
 button:nth-child(1){
     background-color: #D53A00;
     padding: 1em 2em;
@@ -82,6 +102,9 @@ button:nth-child(1){
     border-radius: 50px;
     img{
         width: 1.5em;
+    }
+    :hover{
+        cursor: pointer;
     }
 }
 button:nth-child(2){
@@ -98,5 +121,8 @@ button:nth-child(2){
     img{
         width: 1.5em;
     }
-
+    
+    }
+    :hover{
+        cursor: pointer;
 `

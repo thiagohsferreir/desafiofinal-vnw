@@ -10,7 +10,7 @@ width: 100%;
 gap: 1em;
 height: 75vh;
 h1{
-    width: 28%;
+    width: 20%;
     font-size: 1.5em;
     text-align: center;
 }`

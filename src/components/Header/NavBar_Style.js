@@ -9,6 +9,7 @@ display: flex;
 padding: 1em 2em;
 align-items: center;
 position: fixed;
+z-index: 2;
 background-color:#0000003d;
 backdrop-filter: blur(15px);
     figure{

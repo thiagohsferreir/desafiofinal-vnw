@@ -13,7 +13,6 @@ font-size: .8em;
     }
     section{
     width: 17%;
-    align-items: center;
     margin: 1em;
     display: flex;
     flex-direction: column;
@@ -23,6 +22,11 @@ font-size: .8em;
             white-space: nowrap;
             text-overflow: ellipsis;
             
+        }
+        p{
+            overflow: hidden;
+            width: 30px;
+            height: 15px;
         }
 }
 `
@@ -36,7 +40,6 @@ flex-direction: column;
     h1{
     width: 14%;
     font-size: 1.5em;
-    text-align: center;
     align-self: start;
 
     }
