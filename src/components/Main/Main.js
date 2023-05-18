@@ -1,4 +1,5 @@
 import Carousel_Api from "./Carousel_Api"
+import EmAlta from "./EmAlta"
 import {Principal, NavMain} from "./MainStyle"
 export default function Main() {
   return (
@@ -16,6 +17,7 @@ export default function Main() {
         </ul>
       </NavMain>
     <Carousel_Api/>
+    <EmAlta/>
     </Principal>
   )
 }

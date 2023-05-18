@@ -28,6 +28,7 @@ export const Icon = styled.input`
     border-radius: 20px;
     padding: 4px 6px;
     transition: 1s;
+    transition-delay: 5s;
     &&:hover{
         width: 15em;
         background: url(${LupaBlack});

@@ -8,7 +8,7 @@ padding: 2em 4em;
 flex-direction: column;
 width: 100%;
 gap: 1em;
-height: 100vh;
+height: 75vh;
 h1{
     width: 28%;
     font-size: 1.5em;

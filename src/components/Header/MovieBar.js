@@ -1,36 +1,86 @@
 import React from 'react'
-
-import { Corpo, Info, Imdb, Botoes } from "./MovieBar_Style"
+import { useState, useEffect } from 'react'
+import axios from 'axios'
+import Carousel from "react-elastic-carousel"
+//STYLE
+import {CarouselContainer, Corpo ,Info, Imdb, Botoes } from "./MovieBar_Style"
 //assets
 import Star from "./assets/estrela.png"
 import IMDB from "./assets/imdb.png"
 import Play from "./assets/play.png"
 import Filme from "./assets/filme.png"
+import Avatar from "./assets/Avatar.png"
+
 export default function MovieBar() {
+
+    
+    const [ filmes, setFilmes] = useState([])
+    const [fundo, setFundo] = useState([])
+    
+
+    useEffect(() => {
+       getFilmes()
+    })
+
+    const getFilmes = async () => {
+        await axios
+          .get(
+            "https://api.themoviedb.org/3/movie/popular?api_key=86641266e64be009a74cb0721cf6c720&language=pt-BR",
+          )
+          .then((resposta) => {
+            const allApi = resposta.data.results.map((item) => {
+              return {
+                ...item,
+                image: `https://image.tmdb.org/t/p/w500/${item.poster_path}`,
+              };
+            });
+            setFilmes(allApi);
+            setFundo(arrayAntiga => arrayAntiga =  filmes.slice(0, 1));
+
+
+          })
+          .catch((error) => {
+            alert(`desculpe, você teve um problema na sua api ${error}`);
+          });
+      };
+   
+    
     return (
-        <Corpo>
-            <Info>
-                <h1>Avatar: o Caminho da Água</h1>
-                <h5>3hr 23 min | Fantasia, Família | 2023</h5>
-                <div>
-                    <figure><img src={Star} alt="" /></figure>
-                    <h4>9,9 <span>/10</span></h4>
-                    <Imdb>
-                        <img src={IMDB} alt="" />
-                    </Imdb>
-                </div>
-                <p>Após formar uma família, Jake Sully e Ney'tiri fazem de tudo para ficarem juntos. No entanto, eles devem sair de casa e explorar as regiões de Pandora quando uma antiga ameaça ressurge, e Jake deve travar uma guerra difícil contra os humanos.</p>
-                <Botoes>
-                    <button>
-                        <img src={Play} alt="" /> 
-                        Assistir agora
-                    </button>
-                    <button>
-                        <img src={Filme} alt="" /> 
-                        Trailer
-                    </button>
-                        </Botoes>
-            </Info>
-        </Corpo>
+       
+            <Corpo BackGround={`${fundo.map(item => item.image)}`}>
+                <Info >
+                    
+                <CarouselContainer>
+                    <Carousel enableAutoPlay autoPlaySpeed={5000}>
+                            {filmes.map((item) => (
+                                
+                                <section >
+                                <h1>{item.title}</h1>
+                            <h5> |  | {item.release_date}</h5>
+                            <div>
+                            <figure><img src={Star} alt="" /></figure>
+                            <h4>{item.vote_average} <span>/10</span></h4>
+                            <Imdb>
+                                <img src={IMDB} alt="" />
+                            </Imdb>
+                        </div>
+                        <p>{item.overview}</p>
+                        <Botoes>
+                            <button>
+                                <img src={Play} alt="" />
+                                Assistir agora
+                            </button>
+                            <button>
+                                <img src={Filme} alt="" />
+                                Trailer
+                            </button>
+                                </Botoes>
+                                </section>
+                            ))}
+                            </Carousel>
+                </CarouselContainer>
+                        </Info>
+            </Corpo>
     )
 }
+
