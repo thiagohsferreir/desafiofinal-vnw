@@ -69,7 +69,7 @@ padding:0 0 5em 0;
 `
 export const SearchBox = styled.div`
 align-self: end;
-width: 15%;
+width: 20%;
 background: white;
 
 display: flex;
@@ -83,6 +83,7 @@ input{
     border: none;
     border-decoration: none;
     padding: 5px;
+    width: 100%;
     color: black;
 }
 :focus{
