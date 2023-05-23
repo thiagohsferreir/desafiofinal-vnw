@@ -20,10 +20,13 @@ ul{
     list-style: none;
     justify-content: space-evenly;
     li{
+        padding: 0 1em 1em 1em;
     }
     :hover{
-    color: tomato;
+    margin-bottom: -3px;
+    border-bottom: 3px solid white;
     cursor: pointer;
 }
 
 `
+export const Pesquisa = styled.input``

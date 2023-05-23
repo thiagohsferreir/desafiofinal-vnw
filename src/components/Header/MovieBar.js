@@ -20,7 +20,7 @@ export default function MovieBar() {
 
   useEffect(() => {
     getFilmes()
-    //  filtrar()
+
   })
 
   const getFilmes = async () => {
@@ -45,7 +45,7 @@ export default function MovieBar() {
         alert(`desculpe, você teve um problema na sua api ${error}`);
       });
   };
-
+  
 
   return (
 
@@ -59,7 +59,7 @@ export default function MovieBar() {
             <Info>
               <section >
                 <h1>{item.title}</h1>
-                <h5>|   |{item.release_date}</h5>
+                <h5>{item.release_date}</h5>
                 <div>
                   <figure><img src={Star} alt="" /></figure>
                   <h4>{item.vote_average} <span>/10</span></h4>

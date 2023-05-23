@@ -42,6 +42,9 @@ align-items: end;
     }
     h5{
         font-weight: 200;
+        width: 32px;
+        height: 20px;
+        overflow: hidden;
         
         
     }
@@ -69,7 +72,6 @@ align-items: end;
     p{
         
         width: 40%;
-        height: 10vh;
         line-height: 1.5em;
         font-weight: 200;
         overflow: hidden;
