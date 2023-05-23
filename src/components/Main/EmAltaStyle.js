@@ -71,7 +71,7 @@ export const SearchBox = styled.div`
 align-self: end;
 width: 20%;
 background: white;
-
+overflow: hidden;
 display: flex;
 align-items: center;
 border-radius: 20px;
